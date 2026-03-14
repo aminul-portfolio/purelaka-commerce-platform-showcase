@@ -1,70 +1,165 @@
-# Project Summary
+# PureLaka Commerce Platform — Reviewer Guide
 
-## Overview
+This guide is written for mentors, recruiters, and hiring managers who want to evaluate PureLaka efficiently and draw accurate conclusions about the capabilities it demonstrates.
 
-PureLaka Commerce Platform is a Django-based commerce analytics and reporting project focused on turning transactional business data into structured, business-facing outputs.
+It covers: what to look at, in what order, and what each surface is designed to prove.
 
-Rather than presenting commerce only as storefront activity, the project is positioned as a transactional data product. It brings together orders, payments, refunds, subscriptions, and customer activity into a system designed for KPI reporting, operational visibility, and controlled review workflows.
+---
 
-## What the project is designed to show
+## Before You Start — What Kind of Project This Is
 
-PureLaka is intended to demonstrate capability in:
+PureLaka is not a storefront demo. It is not a Stripe integration walkthrough. It is a **transactional data product**: a system that takes raw commerce data — orders, payments, refunds, subscriptions — and turns it into KPI dashboards, operational monitoring surfaces, and business-facing reporting outputs.
 
-- transactional data modelling
-- KPI dashboard design
-- business-facing reporting
-- payment lifecycle visibility
-- subscription and recurring revenue context
-- operational monitoring and auditability
-- role-based access to reporting and workflow surfaces
+The project is positioned at the intersection of analytics engineering, data product design, and backend development. The right lens for reviewing it is: *does this show the judgment and capability of someone who can build reliable, business-facing data systems?*
 
-## Core business surfaces
+---
 
-The project includes several key reviewer-facing areas:
+## Recommended Review Path
 
-- **Analytics dashboard** for KPI reporting and chart-based insight
-- **Monitoring surface** for operational checks, mismatch detection, and issue visibility
-- **Orders workflow** for order-state reporting and staff-facing review
-- **Order detail view** for payment, refund, and audit context
-- **Subscriptions view** for MRR and lifecycle-oriented metrics
-- **Secure checkout and product catalogue** as supporting commerce context
+Follow this sequence for the most representative overview. Each step builds on the last.
 
-## Best role fit
+---
 
-PureLaka is most relevant for:
+### Step 1 — Analytics Dashboard
 
-- Analytics Engineer
-- Data Analyst
-- BI / Reporting Analyst
-- Data Engineer [Junior / Integration]
-- Python / Django data-product roles
+**What to open:** `/analytics/` or the Analytics Dashboard screenshot
 
-## Best industry fit
+**What it shows:**
+- KPI reporting structure and chart output quality
+- Date-range filter design (7d / 30d / 90d / custom snapshot windows)
+- CSV export availability for analyst handoff
+- How raw transactional records are surfaced as business metrics
 
-PureLaka is especially relevant to:
+**What to look for:**
+The dashboard is the primary business-facing output of the project. Assess whether the KPIs are meaningfully chosen — not just "total orders" but revenue trends, payment success rates, subscription MRR — and whether the chart outputs would be usable by a non-technical stakeholder.
 
-- e-commerce
-- retail analytics
-- subscription commerce
-- revenue / operations reporting
-- business-facing SaaS
+---
 
-## Technical positioning
+### Step 2 — Monitoring Dashboard
 
-The project is built on a Python and Django stack, with Stripe-ready payment lifecycle patterns, Plotly-based analytics outputs, and a read-oriented reporting layer separated from core transactional workflows.
+**What to open:** `/monitoring/` or the Monitoring Dashboard screenshot
 
-The overall goal is to show how raw transactional events can be turned into reliable reporting surfaces and operational insight, while maintaining workflow credibility, audit coverage, and reviewer-friendly structure.
+**What it shows:**
+- Operational data quality awareness — not just reporting, but trust in the data
+- Payment/order mismatch detection logic
+- Invalid state and negative stock checks
+- Run-on-demand check design
 
-## Why this project matters in a portfolio
+**What to look for:**
+This surface separates PureLaka from projects that only report what the data says, without questioning whether the data is correct. Mismatch detection — where payment state and order state are compared and discrepancies surfaced — is a production-relevant capability that most portfolio projects omit entirely. The design of the check runner (discrete, independently runnable units) reflects how operational data quality is actually managed in analytics teams.
 
-PureLaka represents the **transactional business data** part of a broader portfolio story:
+---
 
-- **CineScope Analytics** → event / activity data
-- **DataBridge Market API** → external / API-driven data
-- **PureLaka Commerce Platform** → transactional business data
+### Step 3 — Orders List and Order Detail
 
-Together, these projects demonstrate breadth across multiple categories of data work rather than repeating the same project type in different visual forms.
+**What to open:** `/orders/` and any individual order detail view
 
-## Private technical review
+**What it shows:**
+- Order lifecycle state management (pending → confirmed → fulfilled → cancelled)
+- Payment state tracking alongside order state
+- Refund handling and state visibility
+- Audit log entries at the order level
 
-A deeper technical walkthrough, architecture discussion, and source review are available privately for mentors, serious recruiters, and buyer conversations.
+**What to look for:**
+The order detail view is where the payment, refund, and audit layers come together. Look for whether the audit log is genuinely useful — timestamped, action-attributed, covering the key state transitions — rather than decorative. The separation of payment state from order state (enabling mismatch detection in Step 2) should be visible here.
+
+---
+
+### Step 4 — Subscriptions / MRR
+
+**What to open:** `/subscriptions/` or the Subscriptions Dashboard screenshot
+
+**What it shows:**
+- MRR tracking and recurring revenue visibility
+- Churn-related metrics and lifecycle state management
+- Subscription data structured to feed the broader analytics surface
+
+**What to look for:**
+Subscription analytics is a distinct reporting domain from order analytics — it requires thinking about recurring state, not just point-in-time events. Assess whether the MRR output is structurally sound and whether churn inputs are modelled in a way that would support real analysis, not just a status flag.
+
+---
+
+### Step 5 — Architecture and Design Decisions
+
+**What to review:** The `docs/` folder, this guide, and the project summary
+
+**What it shows:**
+- Multi-app Django structure with clear domain ownership
+- Read-oriented analytics and monitoring layers, separated from transactional write paths
+- Explicit audit event writes (not model signals) for durability and independent queryability
+- PaymentIntent pattern chosen for state-model alignment, not just Stripe compliance
+- Role-based access scoped to Admin, Analyst, and Ops personas
+
+**What to look for:**
+The architecture section of the README documents the directory structure. The more meaningful signal is in the *why* behind the choices: why PaymentIntents over a simpler payment model, why explicit audit writes rather than signals, why the monitoring layer is a separate app rather than a management command. Those decisions are documented in the project summary and available in depth in the private technical walkthrough.
+
+---
+
+### Step 6 — Private Technical Walkthrough *(on request)*
+
+**What it covers:**
+- Full source code access
+- Architecture walkthrough with design rationale
+- Service layer structure and analytics decoupling
+- Monitoring check implementation and extensibility design
+- Technical discussion and Q&A
+
+**Who this is for:** Mentors, hiring managers conducting technical assessments, and serious recruiters who need to verify implementation depth beyond what a public showcase provides.
+
+📩 [Request private review access](mailto:aminulislamkhan.tech@gmail.com)
+
+---
+
+## What This Project Is Designed to Prove
+
+| Capability | Where It's Visible |
+|---|---|
+| Transactional data modelling for reporting | Schema design, order/payment/subscription structure |
+| KPI dashboard design and business metric output | Analytics Dashboard |
+| Payment lifecycle visibility and state tracking | Order Detail, Payments Layer |
+| Operational monitoring and data quality awareness | Monitoring Dashboard |
+| Audit trail design and durability | Order Detail audit log, Audit app |
+| Subscription and recurring revenue context | Subscriptions / MRR dashboard |
+| Role-based access and controlled review workflows | Admin / Analyst / Ops scoping |
+| Read-oriented analytics architecture | App separation, service layer design |
+
+---
+
+## What This Project Is Not Claiming
+
+It is worth being direct about scope.
+
+- PureLaka is a **portfolio project**, not a production system. It is built to demonstrate capability and judgment, not to handle live traffic.
+- The Stripe integration is **Stripe-ready** — it follows PaymentIntent patterns faithfully — but is not connected to a live Stripe account in the public showcase. Mock mode is used for local development and review.
+- The full source code, including service layer implementation and monitoring check design, is available in the **private technical review**. The public showcase repo contains the architecture, documentation, and screenshots necessary to assess the project's scope and design quality.
+
+---
+
+## Role and Industry Fit
+
+**Best role fit**
+
+Analytics Engineer · Data Analyst · BI / Reporting Analyst · Data Engineer (Junior / Integration) · Python / Django data-product roles
+
+**Best industry fit**
+
+E-commerce · Retail Analytics · Subscription Commerce · Revenue / Operations Reporting · Business-facing SaaS
+
+---
+
+## Portfolio Context
+
+PureLaka is the transactional data layer of a three-project portfolio:
+
+| Project | Data Category | Core Focus |
+|---|---|---|
+| **CineScope Analytics** | Event / activity data | User behaviour, event pipelines, activity analytics |
+| **DataBridge Market API** | External / API-driven data | Multi-source integration, API design, data serving |
+| **PureLaka Commerce Platform** | Transactional business data | Orders, payments, subscriptions, KPI reporting |
+
+The three projects cover different data categories by design — they are not variations on a theme. Together they demonstrate breadth across the main categories of data engineering work a professional is likely to encounter.
+
+---
+
+*For the full technical walkthrough or source access, reach out directly.*
+*📩 [aminulislamkhan.tech@gmail.com](mailto:aminulislamkhan.tech@gmail.com)*
