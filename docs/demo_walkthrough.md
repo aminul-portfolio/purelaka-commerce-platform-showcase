@@ -18,7 +18,7 @@ That single framing sentence does most of the positioning work before a single s
 
 ## Step 1 — Analytics Dashboard
 
-**Open:** `/analytics/`
+**Open:** Analytics Dashboard
 
 ### What to show
 - KPI cards and how they are derived from transactional data
@@ -32,7 +32,7 @@ That single framing sentence does most of the positioning work before a single s
 - Visual output quality and dashboard structure appropriate for a non-technical stakeholder
 
 ### Why it comes first
-This is the clearest proof that PureLaka is an analytics and reporting product. A reviewer who sees this first understands the project's ambition immediately. A reviewer who sees the product catalogue first may never fully reframe their interpretation.
+This is the clearest proof that PureLaka is an analytics and reporting product. A reviewer who sees this first understands the project's ambition immediately — a reviewer who sees the catalogue first may never fully reframe their interpretation.
 
 ### What to say
 > "This is the primary business-facing output of the project. The KPIs are derived from the order, payment, and subscription data — not hardcoded. The date filters let you scope to any reporting window, and the CSV export means an analyst can pull this into Excel or a BI tool without any additional tooling."
@@ -41,7 +41,7 @@ This is the clearest proof that PureLaka is an analytics and reporting product. 
 
 ## Step 2 — Monitoring Dashboard
 
-**Open:** `/monitoring/`
+**Open:** Monitoring Dashboard
 
 ### What to show
 - Issue counts and check status indicators
@@ -55,7 +55,7 @@ This is the clearest proof that PureLaka is an analytics and reporting product. 
 - Production-minded design: mismatch detection and operational checks reflect how real analytics teams maintain data trust
 
 ### Why it matters
-This surface is one of PureLaka's strongest differentiators. Most portfolio projects report what the data says. Very few ask whether the data should be trusted in the first place. The monitoring layer makes the whole system more credible — it signals that the builder understands what happens when transactional systems go wrong.
+Most portfolio projects report what the data says. Very few ask whether the data should be trusted. The monitoring layer signals that the builder understands what happens when transactional systems go wrong — and that makes the whole system more credible.
 
 ### What to say
 > "This is the monitoring surface. It runs operational checks on the underlying data — payment and order state mismatches, invalid lifecycle transitions, stock integrity. These are the kinds of checks a data or ops team would need to run regularly in a production environment. The checks are designed as discrete units so new ones can be added without touching existing logic."
@@ -64,7 +64,7 @@ This surface is one of PureLaka's strongest differentiators. Most portfolio proj
 
 ## Step 3 — Orders List
 
-**Open:** `/orders/`
+**Open:** Orders List
 
 ### What to show
 - Search and filter controls
@@ -81,7 +81,7 @@ This surface is one of PureLaka's strongest differentiators. Most portfolio proj
 This moves the demo from abstract dashboard outputs into concrete business workflow handling — showing that the reporting layer sits on top of a properly structured transactional core.
 
 ### What to say
-> "The orders list is the staff-facing reporting view. It's filterable by state, searchable by customer or reference, and export-ready. The order state — pending, confirmed, fulfilled, cancelled — feeds directly into the KPI reporting and the monitoring checks we looked at earlier."
+> "The orders list is the staff-facing reporting view. It's filterable by state, searchable by customer or reference, and export-ready. The order state — pending, confirmed, fulfilled, canceled — feeds directly into the KPI reporting and the monitoring checks we looked at earlier."
 
 ---
 
@@ -101,7 +101,7 @@ This moves the demo from abstract dashboard outputs into concrete business workf
 - Audit trail design that would be useful in a real operational or compliance context
 
 ### Why it matters
-This is where the payment, refund, and audit layers come together in a single view. It demonstrates that PureLaka is not only about aggregate dashboards, but about the underlying transaction-level credibility that makes those dashboards trustworthy.
+This is where the payment, refund, and audit layers come together in a single view — demonstrating transaction-level credibility, not just aggregate dashboard outputs.
 
 ### What to say
 > "The order detail view brings together payment state, refund context, and the audit log in one place. The audit entries are written as explicit records at each key action — not derived from model signals — so the trail is reliable even if the schema changes. This is also where payment/order mismatches become visible at the individual transaction level."
@@ -110,7 +110,7 @@ This is where the payment, refund, and audit layers come together in a single vi
 
 ## Step 5 — Subscriptions / MRR
 
-**Open:** `/subscriptions/`
+**Open:** Subscriptions / MRR Dashboard
 
 ### What to show
 - Active vs inactive subscription states
@@ -124,7 +124,7 @@ This is where the payment, refund, and audit layers come together in a single vi
 - Churn inputs modelled in a way that supports real analysis
 
 ### Why it matters
-Subscription analytics is a distinct domain. Adding it demonstrates that the project covers the full scope of modern commerce data — not just order processing — and that the reporting layer is designed to handle recurring-state data, not just point-in-time events.
+Subscription analytics is a distinct domain from order analytics. Including it shows the reporting layer handles recurring-state data — not just point-in-time events — and that the project covers the full scope of modern commerce intelligence.
 
 ### What to say
 > "The subscriptions view covers MRR and subscription lifecycle state. Recurring revenue data requires different modelling from order data — you're tracking state over time, not just events. The MRR output here feeds into the analytics dashboard and is structured to support churn analysis, not just active/inactive counts."
@@ -133,7 +133,7 @@ Subscription analytics is a distinct domain. Adding it demonstrates that the pro
 
 ## Step 6 — Checkout and Product Catalogue *(supporting context)*
 
-**Open:** `/products/` and `/checkout/`
+**Open:** Products Catalogue, then Secure Checkout
 
 ### What to show
 - Product catalogue with variants and categories
@@ -145,7 +145,7 @@ Subscription analytics is a distinct domain. Adding it demonstrates that the pro
 - The project includes genuine operational and user-facing workflows, not synthetic data fixtures
 
 ### Why these come last
-These pages are real and well-built, but they are not the strongest proof of the project's analytical value. They serve as confirmation that the dashboards and monitoring surfaces are reporting on a credible transactional foundation — not as the centrepiece of the demo.
+These pages are real and well-built, but they are not the strongest proof of analytical value. They confirm that the dashboards and monitoring surfaces are reporting on a credible transactional foundation — supporting the story, not leading it.
 
 ### What to say
 > "The checkout and catalogue pages are here to show that the analytics and monitoring surfaces are reporting on a complete commerce system — real product variants, real cart and checkout flows, real payment lifecycle. The reporting layer isn't sitting on top of seed data; it's sitting on top of a working commerce workflow."
