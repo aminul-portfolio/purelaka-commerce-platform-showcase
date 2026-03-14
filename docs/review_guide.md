@@ -22,7 +22,7 @@ Follow this sequence for the most representative overview. Each step builds on t
 
 ### Step 1 — Analytics Dashboard
 
-**What to open:** `/analytics/` or the Analytics Dashboard screenshot
+**What to open:** Analytics Dashboard
 
 **What it shows:**
 - KPI reporting structure and chart output quality
@@ -31,13 +31,13 @@ Follow this sequence for the most representative overview. Each step builds on t
 - How raw transactional records are surfaced as business metrics
 
 **What to look for:**
-The dashboard is the primary business-facing output of the project. Assess whether the KPIs are meaningfully chosen — not just "total orders" but revenue trends, payment success rates, subscription MRR — and whether the chart outputs would be usable by a non-technical stakeholder.
+Assess whether the KPIs are meaningfully chosen — revenue trends, payment success rates, subscription MRR — and whether the chart outputs would be usable by a non-technical stakeholder. This is the primary business-facing output of the project.
 
 ---
 
 ### Step 2 — Monitoring Dashboard
 
-**What to open:** `/monitoring/` or the Monitoring Dashboard screenshot
+**What to open:** Monitoring Dashboard
 
 **What it shows:**
 - Operational data quality awareness — not just reporting, but trust in the data
@@ -46,16 +46,16 @@ The dashboard is the primary business-facing output of the project. Assess wheth
 - Run-on-demand check design
 
 **What to look for:**
-This surface separates PureLaka from projects that only report what the data says, without questioning whether the data is correct. Mismatch detection — where payment state and order state are compared and discrepancies surfaced — is a production-relevant capability that most portfolio projects omit entirely. The design of the check runner (discrete, independently runnable units) reflects how operational data quality is actually managed in analytics teams.
+This surface separates PureLaka from projects that only report what the data says, without questioning whether the data is correct. Mismatch detection — where payment state and order state are compared and discrepancies surfaced — is a production-relevant capability most portfolio projects omit entirely. The check runner design (discrete, independently runnable units) reflects how operational data quality is managed in real analytics teams.
 
 ---
 
 ### Step 3 — Orders List and Order Detail
 
-**What to open:** `/orders/` and any individual order detail view
+**What to open:** Orders List, then any individual Order Detail view
 
 **What it shows:**
-- Order lifecycle state management (pending → confirmed → fulfilled → cancelled)
+- Order lifecycle state management (pending → confirmed → fulfilled → canceled)
 - Payment state tracking alongside order state
 - Refund handling and state visibility
 - Audit log entries at the order level
@@ -67,7 +67,7 @@ The order detail view is where the payment, refund, and audit layers come togeth
 
 ### Step 4 — Subscriptions / MRR
 
-**What to open:** `/subscriptions/` or the Subscriptions Dashboard screenshot
+**What to open:** Subscriptions / MRR Dashboard
 
 **What it shows:**
 - MRR tracking and recurring revenue visibility
@@ -75,7 +75,7 @@ The order detail view is where the payment, refund, and audit layers come togeth
 - Subscription data structured to feed the broader analytics surface
 
 **What to look for:**
-Subscription analytics is a distinct reporting domain from order analytics — it requires thinking about recurring state, not just point-in-time events. Assess whether the MRR output is structurally sound and whether churn inputs are modelled in a way that would support real analysis, not just a status flag.
+Subscription analytics requires thinking about recurring state, not just point-in-time events. Assess whether the MRR output is structurally sound and whether churn inputs are modelled to support real analysis, not just an active/inactive flag.
 
 ---
 
@@ -91,7 +91,7 @@ Subscription analytics is a distinct reporting domain from order analytics — i
 - Role-based access scoped to Admin, Analyst, and Ops personas
 
 **What to look for:**
-The architecture section of the README documents the directory structure. The more meaningful signal is in the *why* behind the choices: why PaymentIntents over a simpler payment model, why explicit audit writes rather than signals, why the monitoring layer is a separate app rather than a management command. Those decisions are documented in the project summary and available in depth in the private technical walkthrough.
+The README documents the directory structure. The more meaningful signal is in the *why* behind the choices: why PaymentIntents over a simpler payment model, why explicit audit writes rather than model signals, why the monitoring layer is a separate app. Those decisions are documented in the project summary and covered in depth in the private technical walkthrough.
 
 ---
 
