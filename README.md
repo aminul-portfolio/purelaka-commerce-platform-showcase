@@ -52,59 +52,16 @@ This is not a storefront demo. It is not a Stripe integration walkthrough. It is
 
 ## Screenshots
 
-<table>
-<tr>
-<td width="50%">
-<img src="assets/screenshots/purelaka_01_analytics_dashboard.png" alt="Commerce Analytics Dashboard" width="100%"/>
-
-**`01 · Analytics Dashboard`**
-KPI reporting · Plotly charts · CSV export · Snapshot windows
-</td>
-<td width="50%">
-<img src="assets/screenshots/purelaka_02_monitoring_dashboard.png" alt="Data Quality Monitoring" width="100%"/>
-
-**`02 · Monitoring Dashboard`**
-Mismatch detection · Stock checks · Audit trail · Run checks
-</td>
-</tr>
-<tr>
-<td width="50%">
-<img src="assets/screenshots/purelaka_03_orders_list.png" alt="Orders List" width="100%"/>
-
-**`03 · Orders — Reporting View`**
-Search · Filter · Export CSV · Staff view
-</td>
-<td width="50%">
-<img src="assets/screenshots/purelaka_04_order_detail.png" alt="Order Detail" width="100%"/>
-
-**`04 · Order Detail`**
-PaymentIntent · Refund flow · Audit log
-</td>
-</tr>
-<tr>
-<td width="50%">
-<img src="assets/screenshots/purelaka_05_subscriptions_dashboard.png" alt="Subscriptions Dashboard" width="100%"/>
-
-**`05 · Subscriptions / MRR`**
-MRR · Churn metrics · Lifecycle states
-</td>
-<td width="50%">
-<img src="assets/screenshots/purelaka_06_secure_checkout.png" alt="Secure Checkout" width="100%"/>
-
-**`06 · Secure Checkout`**
-Stripe-ready · PaymentIntent · Mock mode
-</td>
-</tr>
-<tr>
-<td width="50%">
-<img src="assets/screenshots/purelaka_08_products_catalog.png" alt="Products Catalog" width="100%"/>
-
-**`07 · Products Catalogue`**
-Variants · Categories · Wishlist · Product images
-</td>
-<td></td>
-</tr>
-</table>
+| | |
+|---|---|
+| <img src="docs/proof/screenshots/purelaka_01_analytics_dashboard.png" alt="Commerce Analytics Dashboard" width="100%"/> | <img src="docs/proof/screenshots/purelaka_02_monitoring_dashboard.png" alt="Data Quality Monitoring" width="100%"/> |
+| **`01 · Analytics`** &nbsp; Commerce Analytics Dashboard<br/><sub>`KPI reporting` &nbsp; `Plotly charts` &nbsp; `CSV export` &nbsp; `Snapshot windows`</sub> | **`02 · Monitoring`** &nbsp; Data Quality Monitoring<br/><sub>`Mismatch detection` &nbsp; `Stock checks` &nbsp; `Audit trail` &nbsp; `Run checks`</sub> |
+| <img src="docs/proof/screenshots/purelaka_03_orders_list.png" alt="Orders List" width="100%"/> | <img src="docs/proof/screenshots/purelaka_04_order_detail.png" alt="Order Detail" width="100%"/> |
+| **`03 · Orders`** &nbsp; Orders List / Reporting View<br/><sub>`Search` &nbsp; `Filter` &nbsp; `Export CSV` &nbsp; `Staff view`</sub> | **`04 · Transactions`** &nbsp; Order Detail / Payment / Refund / Audit<br/><sub>`PaymentIntent` &nbsp; `Refund flow` &nbsp; `Audit log`</sub> |
+| <img src="docs/proof/screenshots/purelaka_05_subscriptions_dashboard.png" alt="Subscriptions Dashboard" width="100%"/> | <img src="docs/proof/screenshots/purelaka_06_secure_checkout.png" alt="Secure Checkout" width="100%"/> |
+| **`05 · Subscriptions`** &nbsp; Subscriptions / MRR Dashboard<br/><sub>`MRR` &nbsp; `Churn metrics` &nbsp; `Lifecycle states` &nbsp; `Stripe-backed`</sub> | **`06 · Payments`** &nbsp; Secure Checkout<br/><sub>`Stripe-ready` &nbsp; `PaymentIntent` &nbsp; `Webhook confirmed` &nbsp; `Mock mode`</sub> |
+| <img src="docs/proof/screenshots/purelaka_08_products_catalog.png" alt="Products Catalog" width="100%"/> | |
+| **`07 · Catalogue`** &nbsp; Products Catalog<br/><sub>`Variants` &nbsp; `Categories` &nbsp; `Wishlist` &nbsp; `Product images`</sub> | |
 
 ---
 
