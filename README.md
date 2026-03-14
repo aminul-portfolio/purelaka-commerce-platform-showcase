@@ -25,17 +25,15 @@
 
 ---
 
-## The Business Problem This Solves
+## Why This Project Matters
 
-Commerce teams generate enormous volumes of transactional data — orders, payments, refunds, subscriptions — and routinely struggle to turn it into timely, trustworthy operational insight.
+Commerce teams generate large volumes of transactional data — orders, payments, refunds, and subscriptions — but often struggle to turn it into timely, trustworthy operational insight.
 
-**PureLaka is built to close that gap.**
+**PureLaka is designed to close that gap.**
 
-It functions as a commerce analytics and reporting product: a structured system that transforms raw transactional records into KPI dashboards, monitored data pipelines, and business-facing reporting surfaces — with the reliability and auditability that operational teams depend on.
+It functions as a commerce analytics and reporting product: a structured system that transforms raw transactional records into KPI dashboards, monitored operational workflows, and business-facing reporting surfaces — with the reliability and auditability that operational teams depend on.
 
-This is not a storefront demo. It is not a Stripe integration walkthrough. It is a **transactional data product** engineered for the full lifecycle: capture → quality → reporting → insight.
-
----
+This is not a storefront demo or a Stripe integration walkthrough. It is a **transactional data product** built for the full lifecycle: capture → quality → reporting → insight.
 
 ## What It Delivers
 
