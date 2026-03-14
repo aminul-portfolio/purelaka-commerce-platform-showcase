@@ -14,19 +14,19 @@ The central design question behind PureLaka is: once the transactions exist, how
 
 PureLaka demonstrates capability across the core disciplines of transactional data product work:
 
-**Transactional data modelling** — Orders, payments, subscriptions, and customer activity are structured from the ground up for reporting, not retrofitted. The schema is designed to support analytical queries without sacrificing transactional integrity.
+- **Transactional data modelling** — Orders, payments, subscriptions, and customer activity are structured from the ground up for reporting, not retrofitted. The schema is designed to support reporting and analytical queries while preserving transactional clarity.
 
-**KPI dashboard design** — A Plotly-based analytics surface with date-range filters, snapshot windows, and CSV export. Designed to show how raw records become business metrics, not just how to render a chart.
+- **KPI dashboard design** — A Plotly-based analytics surface with date-range filters, snapshot windows, and CSV export. Designed to show how raw records become business metrics, not just how to render a chart.
 
-**Payment lifecycle visibility** — Stripe-ready PaymentIntent flow with refund handling, state tracking, and a webhook-aware layer that keeps local payment state aligned with Stripe's source of truth. The payment model is the foundation for mismatch detection in the monitoring layer.
+- **Payment lifecycle visibility** — Stripe-ready PaymentIntent flow with refund handling, state tracking, and a webhook-aware layer that keeps local payment state aligned with Stripe's source of truth. The payment model is the foundation for mismatch detection in the monitoring layer.
 
-**Subscription and recurring revenue context** — MRR tracking, churn-related metrics, and subscription lifecycle state management, structured to feed both the subscriptions dashboard and the broader KPI surface.
+- **Subscription and recurring revenue context** — MRR tracking, churn-related metrics, and subscription lifecycle state management, structured to feed both the subscriptions dashboard and the broader KPI surface.
 
-**Operational monitoring and data quality** — A dedicated monitoring surface with run-on-demand checks: payment/order mismatches, invalid state transitions, negative stock conditions. Designed so new checks can be added as discrete units — reflecting how operational data quality is managed in production environments.
+- **Operational monitoring and data quality** — A dedicated monitoring surface with run-on-demand checks: payment/order mismatches, invalid state transitions, negative stock conditions. Designed so new checks can be added as discrete units — reflecting how operational data quality is managed in production environments.
 
-**Audit coverage** — Discrete audit event records written at key action points across the order and payment lifecycle. Implemented as explicit writes rather than model signals, making the trail durable and independently queryable.
+- **Audit coverage** — Discrete audit event records written at key action points across the order and payment lifecycle. Implemented as explicit writes rather than model signals, making the trail durable and independently queryable.
 
-**Controlled review workflows** — Role-based access scoped to Admin, Analyst, and Ops personas. Each sees the surfaces relevant to their function. The project is structured to be reviewer-friendly at every level, from public showcase to private technical walkthrough.
+- **Controlled review workflows** — Role-based access scoped to Admin, Analyst, and Ops personas. Each sees the surfaces relevant to their function. The project is structured to be reviewer-friendly at every level, from public showcase to private technical walkthrough.
 
 ---
 
@@ -92,4 +92,4 @@ A full technical walkthrough — including complete source code, architecture di
 
 If you would like access or would like to arrange a guided walkthrough, reach out directly.
 
-📩 [Request private review access](aminulislamkhan.tech@gmail.com)
+📩 [Request private review access](mailto:aminulislamkhan.tech@gmail.com)
